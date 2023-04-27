@@ -28,18 +28,18 @@ class HomePage extends StatelessWidget {
             mainAxisSize: MainAxisSize.min,
             children: BoxHeightStyle.values.map((boxHeightStyle) {
               return  Column(
-                children: [
+                children: const [
                   SelectableText(
-                    "$boxHeightStyle",
+                    "sdasds sdasds sdasds sdasds sdasds sdasds",
                     textAlign: TextAlign.center,
-                    style: const TextStyle(
+                    style: TextStyle(
                       height: 2.5,
                       fontWeight: FontWeight.bold,
-                      fontSize: 27.5,
+                      fontSize: 27,
                     ),
-                    selectionHeightStyle: boxHeightStyle,
+                    selectionHeightStyle: BoxHeightStyle.tight,
                   ),
-                  const SizedBox(height: 5,),
+                  // SizedBox(height: 5,),
                 ],
               );
             }).toList(),
