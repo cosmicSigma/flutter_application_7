@@ -11,6 +11,7 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return const MaterialApp(
       home: HomePage(),
+      debugShowCheckedModeBanner: false,
     );
   }
 }
@@ -37,6 +38,7 @@ class HomePage extends StatelessWidget {
                     color: Colors.white
                 ),
                 showCursor: true,
+                autofocus: true,
                 cursorWidth: 10,
                 cursorHeight: 20,
                 cursorColor: Colors.grey,
