@@ -11,7 +11,6 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return const MaterialApp(
       home: HomePage(),
-      debugShowCheckedModeBanner: false,
     );
   }
 }
@@ -21,29 +20,18 @@ class HomePage extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
-      backgroundColor: Colors.black,
+    return  const Scaffold(
       body: SafeArea(
-        child: Align(
-          alignment: Alignment.topLeft,
-          child: Row(
-            children: const [
-              Text("nasibali@Nasibalis-Macbook-Pro ~ % ", style: TextStyle(color: Colors.white, fontSize: 16),),
-              SelectableText.rich(
-                TextSpan(text: " "),
-                textAlign: TextAlign.center,
-                style: TextStyle(
-                    fontWeight: FontWeight.bold,
-                    fontSize: 16,
-                    color: Colors.white
-                ),
-                showCursor: true,
-                autofocus: true,
-                cursorWidth: 10,
-                cursorHeight: 20,
-                cursorColor: Colors.grey,
-              ),
-            ],
+        child: Center(
+          child: SelectableText(
+            'SelectableText class - a run of selectable text with a single style. The SelectableText widget displays a string of text with a single style. The string might break across multiple lines or might all be displayed on the same line depending on the layout constraints.',
+            textAlign: TextAlign.center,
+            style: TextStyle(
+              fontWeight: FontWeight.bold,
+              fontSize: 32,
+            ),
+            minLines: 2,
+            maxLines: 4,
           ),
         ),
       ),
