@@ -1,3 +1,4 @@
+import 'dart:ui';
 import 'package:flutter/material.dart';
 
 void main() {
@@ -20,18 +21,28 @@ class HomePage extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return  const Scaffold(
+    return Scaffold(
       body: SafeArea(
         child: Center(
-          child: SelectableText(
-            'SelectableText class - a run of selectable text with a single style. The SelectableText widget displays a string of text with a single style. The string might break across multiple lines or might all be displayed on the same line depending on the layout constraints.',
-            textAlign: TextAlign.center,
-            style: TextStyle(
-              fontWeight: FontWeight.bold,
-              fontSize: 32,
-            ),
-            minLines: 2,
-            maxLines: 4,
+          child: Column(
+            mainAxisSize: MainAxisSize.min,
+            children: BoxHeightStyle.values.map((boxHeightStyle) {
+              return  Column(
+                children: [
+                  SelectableText(
+                    "$boxHeightStyle",
+                    textAlign: TextAlign.center,
+                    style: const TextStyle(
+                      height: 2.5,
+                      fontWeight: FontWeight.bold,
+                      fontSize: 27.5,
+                    ),
+                    selectionHeightStyle: boxHeightStyle,
+                  ),
+                  const SizedBox(height: 5,),
+                ],
+              );
+            }).toList(),
           ),
         ),
       ),
